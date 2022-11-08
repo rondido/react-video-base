@@ -24,16 +24,24 @@
             });
 
             React.useEffect(()=>{
-                console.log("       Child use state,no deps")
+                console.log("       Child use effect,no deps")
+                return () =>{
+                    console.log("Child useEffect [Cleanup] , no deps")
+                }
 
             })
             React.useEffect(()=>{
-                console.log("       Child use state,empty deps")
+                console.log("       Child use effect, empty deps")
+                return () =>{
+                    console.log("Child useEffect [Cleanup], empty deps")
+                }
 
             },[]);
             React.useEffect(()=>{
-                console.log("       Child use state,empty deps")
-
+                console.log("       Child use effect,text")
+                return () =>{
+                    console.log("Child useEffect [Cleanup], text")
+                }
             },[text]);
 
             function handleChange(event){
@@ -59,15 +67,26 @@
             //선언 해 놓은 순서대로 호출된다.
             //무조건 호출
             React.useEffect (()=>{
-                console.log("app use state,no deps")
+                console.log("app use useEffect,no deps")
+                //기존 세팅 되어 있던 것을 싹 지우고 다시 셋팅한다.
+                //클린업
+                return () =>{
+                    console.log("app useEffect [Cleanup],no deps")
+                }
             })
             //처음 한번만 호출
             React.useEffect (()=>{
-                console.log("app use state,empty deps")
+                console.log("app use useEffect,empty deps")
+                return () =>{
+                    console.log("app useEffect [Cleanup],empty deps")
+                }
             },[])
             //show에 있는 값이 바꼇을때 호출
             React.useEffect (()=>{
-                console.log("app use state,show")
+                console.log("app use useEffect,show")
+                return () =>{
+                    console.log("app useEffect [Cleanup], show")
+                }
             },[show])
             //useState로 만들어진 set함수는 인자로 이전 값이 들어온다.
             //setState의 처음값은 이전 값이다.
