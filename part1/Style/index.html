@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+      
+      .blue {background-color: #008CBA;} /* Blue */
+      .red {background-color: #f44336;} /* Red */ 
+      .black {background-color: #e7e7e7; color: black;} /* Gray */ 
+      .gray {background-color: #555555;} /* Black */
+      </style>
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16.7.0-alpha.0/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16.7.0-alpha.0/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <div id="root"></div>
+
+    <script type="text/babel">    
+        //props라는 객체자체에는 {className, style, children ...};
+        //여기서 클래스네임과 스타일 그외 이기때문에 클래스네임과 스타일이 빠져있다.
+        //react에서 scc 스타일링 우선 순위 스타일 프롭스 classname은 더 후순위에 있다.
+      function Button({className ="", color, style, ...rest}){
+       
+        return (<button className={`button${className} ${color}`} 
+        style={{fontSize:50, ...style, backgroundColor:color}}
+        {...rest} />);
+      }
+      const element =(
+        <>
+            <Button  style={{borderRadius:"50%"}}>
+                Green
+            </Button>
+            <Button color=" blue" style={{borderRadius:8, fontSize:20}}>Blue</Button>
+            <Button color=" red">Red</Button>
+            <Button color=" gary">Gray</Button>
+            <Button color=" black">Black</Button>
+        </>
+      )
+        
+        ReactDOM.render(element,document.getElementById("root"));
+    </script>
+  </body>
+</html>
+
