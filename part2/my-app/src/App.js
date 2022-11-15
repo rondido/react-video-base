@@ -8,6 +8,8 @@ import ClassComponent2 from "./components/2-6.LifeCycle/ClassComponent";
 import Condition from "./components/2-8.ConditionalRendering/Condition";
 import List from "./components/2-9.List/List";
 import React from "react";
+import ControlledComponent from "./components/2-10.Form/ControlledComponent";
+import UncontrolledComponent from "./components/2-10.Form/UncontrolledComponent";
 function App() {
   return (
     <div className="App">
@@ -18,7 +20,9 @@ function App() {
       {/* <ClassComponent2/> */}
       {/* <Event/> */}
       {/* <Condition /> */}
-      <List />
+      {/* <List /> */}
+      <ControlledComponent />
+      <UncontrolledComponent />
     </div>
   );
 }
