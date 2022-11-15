@@ -6,6 +6,7 @@ import ClassComponent from "./components/2-5.state/ClassComponent";
 import FunctionalComponent from "./components/2-5.state/FunctionalComponent";
 import ClassComponent2 from "./components/2-6.LifeCycle/ClassComponent";
 import Condition from "./components/2-8.ConditionalRendering/Condition";
+import List from "./components/2-9.List/List";
 import React from "react";
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
       <ClassComponent/> */}
       {/* <ClassComponent2/> */}
       {/* <Event/> */}
-      <Condition />
+      {/* <Condition /> */}
+      <List />
     </div>
   );
 }
