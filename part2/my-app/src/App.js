@@ -12,6 +12,8 @@ import ControlledComponent from "./components/2-10.Form/ControlledComponent";
 import UncontrolledComponent from "./components/2-10.Form/UncontrolledComponent";
 import UseRef from "./components/useRef/UseRef";
 import UseRefLogin from "./components/useRef/UseRefLogin";
+import State from "./components/3-3.Hooks/State";
+import Reducer from "./components/3-3.Hooks/Reducer";
 function App() {
   return (
     <div className="App">
@@ -25,8 +27,10 @@ function App() {
       {/* <List /> */}
       {/* <ControlledComponent />
       <UncontrolledComponent /> */}
-      <UseRef />
+      {/* <UseRef /> */}
       {/* <UseRefLogin /> */}
+      <Reducer />
+      <State />
     </div>
   );
 }
