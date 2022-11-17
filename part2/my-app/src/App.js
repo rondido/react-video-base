@@ -17,8 +17,9 @@ import Reducer from "./components/3-3.Hooks/Reducer";
 import WelcomeDialog from "./components/3-5.Composition/WelcomeDialog";
 import Dialog from "./components/3-6.Composition2/Dialog";
 import ThankyouDialog from "./components/3-6.Composition2/ThankyouDialog";
-import Input from "./components/3-7.HOC/Input";
-import Button from "./components/3-7.HOC/Button";
+//import Input from "./components/3-7.HOC/Input";
+//import Button from "./components/3-7.HOC/Button";
+import Memo from "./components/3-8.Memoization/Memo";
 function App() {
   return (
     <div className="App">
@@ -39,10 +40,11 @@ function App() {
       {/* <WelcomeDialog /> */}
       {/* <Dialog /> */}
       {/* <ThankyouDialog /> */}
-      <Input />
+      {/* <Input />
       <br />
       <br />
-      <Button />
+      <Button /> */}
+      <Memo />
     </div>
   );
 }
