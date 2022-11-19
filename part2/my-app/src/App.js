@@ -23,6 +23,7 @@ import Memo from "./components/3-8.Memoization/Memo";
 function App() {
   return (
     <div className="App">
+      <Example />
       {/* <Composition/>
       <FunctionalComponent/>
       <Extaction/>
