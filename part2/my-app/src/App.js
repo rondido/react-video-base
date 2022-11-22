@@ -25,7 +25,7 @@ import Component from "./components/3-14.PropTypes/Component";
 function App() {
   return (
     <div className="App">
-      <Component />
+      {/* <Component /> */}
       {/* <Example /> */}
       {/* <Composition/>
       <FunctionalComponent/>
@@ -48,7 +48,7 @@ function App() {
       <br />
       <br />
       <Button /> */}
-      {/* <Memo /> */}
+      <Memo />
     </div>
   );
 }
