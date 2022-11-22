@@ -1,10 +1,12 @@
 import "./App.css";
+import DayjsExample from "./Components/Dayjs/DayjsExample";
 import MomentExample from "./Components/Moment/MomentExample";
 
 function App() {
   return (
     <div className="App">
-      <MomentExample />
+      {/* <MomentExample /> */}
+      <DayjsExample />
     </div>
   );
 }
