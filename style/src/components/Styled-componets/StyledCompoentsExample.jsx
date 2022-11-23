@@ -1,52 +1,90 @@
-import React from 'react'
-import styled from 'styled-components';
+import React, { useState } from 'react'
+import styled, { keyframes,ThemeProvider,createGlobalStyle } from 'styled-components';
 
-export default function StyledCompoentsExample() {
 
-  const Title = styled.h1`
-    font-size: 1.5em;
-    text-align: center;
-    color:palevioletred;
+
+  const Input = styled.input.attrs((props) => ({
+    type:"text",
+    size:props.size || "1em",
+  }))`
+    border: 2px solid palevioletred;
+    margin: ${(props)=>props.size};
+    padding: ${(props)=>props.size};
   `
-  const Wrapper = styled.section`
-    padding: 4em;
-    background: papayawhip;
+  const PasswordInput = styled(Input).attrs({
+    type:"password",
+  })`
+    border:2px solid aqua;
+  `;
+
+  const rotate = keyframes`
+    from {
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+  `
+  const Rotate = styled.div`
+    display:inline-block;
+    animation: ${rotate} 2s linear infinite;
+    padding: 2rem 1rem;
+    font-size:1.2rem;
   `
   const Button = styled.button`
-    background: ${props => props.primary ? "palevioletred" : "white"};
-    color:${props => props.primary ? "white" : "palevioletred"};
-
-    font-size: 1em;
+    font-size:1em;
     margin: 1em;
-    padding: 0.25em 1em;
-    border: 2px solid palevioletred;
+    padding:0.25em 1em;
     border-radius: 3px;
+
+    color:${props=> props.theme.color};
+    border: 2px solid ${props => props.theme.borderColor};
   `
-  const TomatoButton = styled(Button)`
-    color:tomato;
-    border-color: tomato;
+  Button.defaultProps ={
+    theme:{
+        color:"palevioletred",
+        borderColor:"blue"
+    }
+  }
+  const defaultTheme= {
+    color:"mediumseagreen",
+    borderColor:"pink"
+    
+  }
+ 
+  const redTheme = {
+    color:"red",
+    borderColor:"pink"
+    
+  } 
+  const GloBalStyle = createGlobalStyle`
+    button {
+        background-color: pink;
+    }
   `
-  const ReversedButton = props => <Button {...props} children={props.children.split('').reverse()}></Button>
-  
+export default function StyledCompoentsExample() {    
+    const [theme, setTheme] = useState(defaultTheme);
   return(
+ 
     <>
-    <Wrapper>
-        <Title>Hello world!</Title>
-    </Wrapper>
-    <Button onClick={() => alert('normal')}>Normal</Button>
-    <Button onClick={() => alert('primary')} primary>Primary</Button>
-    <TomatoButton>Tomato</TomatoButton>
+     <Input placeholder='A bigger text input' size="2em"/>
+     <br/>
+    <PasswordInput placeholder='A bigger password input' size="2em"/>
     <br/>
-    <Button as="a" href="#">
-        Link With Button styles
-    </Button>
-    <TomatoButton as="a" href="#">
-        Link With Tomato Button styles
-    </TomatoButton>
+     <Rotate>💻</Rotate>
     <br/>
-    <Button as={ReversedButton}>
-        Custom Button with Normal Button styles
-    </Button>
+    <div>
+        <GloBalStyle/>
+        <button onClick={() => setTheme(redTheme)}>red</button>
+        <button onClick={() => setTheme(defaultTheme)}>green</button>
+        <Button>Normal</Button>
+        <ThemeProvider theme={theme}>
+            <Button>Themed</Button>
+        </ThemeProvider>
+    </div>
+    <div>
+        <button>Other</button>
+    </div>
     </>
   );
   
