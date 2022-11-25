@@ -23,7 +23,12 @@ export default function SassExample() {
         <p className='success2'>success2</p>
         <p className='error'>error</p>
         <p className='warning'>warning</p>
-        
+        <div className="square-av">square</div>
+        <div className='circle-av'>circle</div>
+        <div className='sidebar'>sidebar</div>
+        <div className='gray'>Gray</div>
+        <div className='button'>button</div>
+        <div className='pulse'>pulse</div>
     </div>
   )
 }
