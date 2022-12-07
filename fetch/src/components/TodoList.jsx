@@ -48,19 +48,23 @@ import {action} from 'mobx';
         store.pendingRequests--;
     }), 2000);
     }
+    const fetchTodo = () =>{
+      store.fetchData();
+    }
     return (
       <div>
         { store.report }
         <ul>
           { store.todos.map(
             (todo, idx) => <TodoView todo={ todo } key={ idx } />
-          ) }
+          )}
         </ul>
         { store.pendingRequests > 0 ? <marquee>Loading...</marquee> : null }
         <button onClick={ onNewTodo }>New Todo</button>
         <small> (double-click a todo to edit)</small>
         <button onClick={run}>run code</button>
         <button onClick={load}>load data </button>
+        <button onClick={fetchTodo}>load data </button>
       </div>
     );
   })
