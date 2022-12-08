@@ -10,6 +10,7 @@ import FontButton from "./components/RecoilExeample/FontButton";
 import Text from "./components/RecoilExeample/Text";
 import CharacterCounter from "./components/RecoilExeample/CharacterCounter";
 import CurrentUserInfo from "./components/RecoilExeample/CurrentUserInfo";
+import TodoList from "./components/RecoilExeample/Todo/TodoList";
 function App() {
   return (
     <div className="App">
@@ -18,10 +19,11 @@ function App() {
       {/* <MobxExample /> */}
       {/* <TodoList store={observableTodoStore} /> */}
       <RecoilRoot>
-        <FontButton />
+        {/* <FontButton />
         <Text />
         <CharacterCounter />
-        <CurrentUserInfo />
+        <CurrentUserInfo /> */}
+        <TodoList />
       </RecoilRoot>
     </div>
   );
