@@ -1,17 +1,26 @@
 import logo from "./logo.svg";
 import "./App.css";
-import TextMocking from "./components/TextMocking";
-import Counter from "./features/counter/Counter";
-import MobxExample from "./components/MobxExample";
-import TodoList from "./components/TodoList";
-import { observableTodoStore } from "./app/ObservableTodoStore";
+// import TextMocking from "./components/TextMocking";
+// import Counter from "./features/counter/Counter";
+// import MobxExample from "./components/MobxExample";
+// import TodoList from "./components/TodoList";
+// import { observableTodoStore } from "./app/ObservableTodoStore";
+import { RecoilRoot } from "recoil";
+import FontButton from "./components/RecoilExeample/FontButton";
+import Text from "./components/RecoilExeample/Text";
+import CharacterCounter from "./components/RecoilExeample/CharacterCounter";
 function App() {
   return (
     <div className="App">
       {/* <TextMocking />
       <Counter /> */}
       {/* <MobxExample /> */}
-      <TodoList store={observableTodoStore} />
+      {/* <TodoList store={observableTodoStore} /> */}
+      <RecoilRoot>
+        <FontButton />
+        <Text />
+        <CharacterCounter />
+      </RecoilRoot>
     </div>
   );
 }
