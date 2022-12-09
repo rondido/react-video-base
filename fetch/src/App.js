@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Text from "./components/ZustandExample/Text";
 import CharacterCounter from "./components/ZustandExample/CharacterCounter";
+import TodoList from "./components/ZustandExample/Todo/TodoList";
 // import TextMocking from "./components/TextMocking";
 // import Counter from "./features/counter/Counter";
 // import MobxExample from "./components/MobxExample";
@@ -29,6 +30,7 @@ function App() {
       {/* </RecoilRoot> */}
       {/* <Text /> */}
       <CharacterCounter />
+      <TodoList />
     </div>
   );
 }

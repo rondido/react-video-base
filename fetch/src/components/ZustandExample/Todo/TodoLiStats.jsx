@@ -1,6 +1,5 @@
 import React from 'react'
-import { useRecoilValue } from 'recoil'
-import { todoListStatsState } from './TodoStore'
+import { useStore } from './TodoStore'
 
 export default function TodoLiStats() {
     const {
@@ -8,7 +7,7 @@ export default function TodoLiStats() {
         totalNum,
         totalCompletedNum,
         totalUncompletedNum
-    } = useRecoilValue(todoListStatsState());
+    } = useStore(state=> state.todoListStatsState);
     const formattedPercentCompleted = Math.round(percentCompleted * 100);
 
   return (
@@ -21,4 +20,3 @@ export default function TodoLiStats() {
   );
 }
 
-  
