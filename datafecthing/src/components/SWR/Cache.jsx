@@ -9,8 +9,9 @@ function localStorageProvider(){
         const appCache =JSON.stringify(Array.from(map.entries()))
         localStorage.setItem('app-cache',appCache);
 
-        return map;
     })
+    return map;
+
 }
 
 export default function Cache() {

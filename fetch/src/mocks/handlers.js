@@ -1,6 +1,13 @@
 import { rest } from "msw";
 
 export const handlers = [
+  rest.get("http://localhost:3000/api/user/123", async (req, res, ctx) => {
+    return res(
+      ctx.json({
+        name: "park"
+      })
+    );
+  }),
   rest.get("http://localhost:3000/api/user-name", async (req, res, ctx) => {
     const id = req.url.searchParams.get("id");
     return res(
