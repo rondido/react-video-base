@@ -1,5 +1,28 @@
 import { rest } from "msw";
 
+const todos = [
+  {
+    id: `1 `,
+    title: `park 1 `,
+  },
+  {
+    id: `2 `,
+    title: `park 2 `,
+  },
+  {
+    id: `3 `,
+    title: `park 3 `,
+  },
+  {
+    id: `4 `,
+    title: `park 4 `,
+  },
+  {
+    id: `5 `,
+    title: `park 5 `,
+  },
+];
+
 export const handlers = [
   rest.get("http://localhost:3000/api/user/:userId", async (req, res, ctx) => {
     const { userId } = req.params;
@@ -9,6 +32,7 @@ export const handlers = [
       })
     );
   }),
+
   rest.get("http://localhost:3000/api/users", async (req, res, ctx) => {
     const pageIndex = req.url.searchParams.get("page");
     return res(
@@ -35,5 +59,15 @@ export const handlers = [
         },
       ])
     );
+  }),
+
+  rest.get("http://localhost:3000/api/todos", async (req, res, ctx) => {
+    return res(ctx.json(todos));
+  }),
+  rest.post("http://localhost:3000/api/todo", async (req, res, ctx) => {
+    const { todo } = req.body;
+    console.log(JSON.stringify(todo));
+    todos.push(todo);
+    return res(ctx.json(true));
   }),
 ];
