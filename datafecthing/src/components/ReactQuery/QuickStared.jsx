@@ -1,5 +1,6 @@
 import React from 'react'
 import {useQueryClient,useQuery,useMutation} from 'react-query';
+import GlobalLoader from './GlobalLoader';
 import {getTodos, postTodo} from './my-api';
 export default function QuickStared() {
     const queryClient = useQueryClient();
@@ -19,6 +20,7 @@ export default function QuickStared() {
     }
   return (
     <div>
+        <GlobalLoader/>
         <ul>
             {query.data.map((todo)=>(
                 <li key={todo.id}>{todo.title}</li>
