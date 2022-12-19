@@ -5,11 +5,12 @@ import TextMocking from "./TestMocking";
 import Cache from "./components/SWR/Cache";
 import Fetcher from "./components/SWR/Fetcher";
 import Mutate from "./components/SWR/Mutate";
-import Pagenation from "./components/SWR/Pagenation";
 import Example from "./components/ReactQuery/Example";
 import { QueryClientProvider, QueryClient } from "react-query";
 import QuickStared from "./components/ReactQuery/QuickStared";
 import { ReactQueryDevtools } from "react-query/devtools";
+import Pagenation from "./components/ReactQuery/Pagenation";
+import InfiniteScroll from "./components/ReactQuery/InfiniteScroll";
 
 const queryClient = new QueryClient();
 
@@ -23,8 +24,10 @@ function App() {
       {/* <Mutate />
       <Pagenation /> */}
       <QueryClientProvider client={queryClient}>
-        <Example />
+        {/* <Example />
         <QuickStared />
+        <Pagenation /> */}
+        <InfiniteScroll />
         <ReactQueryDevtools />
       </QueryClientProvider>
     </div>

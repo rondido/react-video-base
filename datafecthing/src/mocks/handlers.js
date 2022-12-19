@@ -60,6 +60,37 @@ export const handlers = [
       ])
     );
   }),
+  rest.get("http://localhost:3000/api/projects", async (req, res, ctx) => {
+    const pageIndex = req.url.searchParams.get("page");
+    return res(
+      ctx.json({
+        projects: [
+          {
+            id: `1 ${pageIndex}`,
+            name: `park 1 ${pageIndex}`,
+          },
+          {
+            id: `2 ${pageIndex}`,
+            name: `park 2 ${pageIndex}`,
+          },
+          {
+            id: `3 ${pageIndex}`,
+            name: `park 3 ${pageIndex}`,
+          },
+          {
+            id: `4 ${pageIndex}`,
+            name: `park 4 ${pageIndex}`,
+          },
+          {
+            id: `5 ${pageIndex}`,
+            name: `park 5 ${pageIndex}`,
+          },
+        ],
+        hasMore: pageIndex < 4,
+        nextCursour: pageIndex < 4 ? parseInt(pageIndex) + 1 : undefined,
+      })
+    );
+  }),
 
   rest.get("http://localhost:3000/api/todos", async (req, res, ctx) => {
     return res(ctx.json(todos));
