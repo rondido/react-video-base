@@ -4,7 +4,7 @@ import { useInfiniteQuery } from 'react-query'
 
 export default function InfiniteScroll() {
       const fetchProjects = ({ pageParam = 0 }) =>
-        axios.get('/api/projects?page=' + pageParam).then((res)=>res.data)
+        axios.get('/api/projects?page=' + pageParam).then((res)=>res.data);
     
       const {
         data,
