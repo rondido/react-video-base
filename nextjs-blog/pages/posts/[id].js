@@ -18,9 +18,19 @@ export async function getStaticPaths() {
   const paths = getAllPostIds();
   return {
     paths,
-    fallback: false,
+    fallback: "false",
   };
 }
+
+// export async function getServerSideprops({ params, req }) {
+//   console.log(`req.cookies:${JSON.stringify(req.cookies)}`);
+//   const postData = await getPostData(params.id);
+//   return {
+//     props: {
+//       postData,
+//     },
+//   };
+// }
 
 export default function Post({ postData }) {
   const router = useRouter();

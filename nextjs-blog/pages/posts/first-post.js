@@ -1,8 +1,17 @@
 import Link from "next/link";
 import Head from "next/head";
 import Layout from "../../compoenents/layout";
+import { useEffect } from "react";
+import { Router, useRouter } from "next/router";
 
 export default function FirstPost() {
+  const router = useRouter();
+  useEffect(() => {
+    router.push("/posts/first-post/?count=10", undefined, { shallow: true });
+  }, []);
+  useEffect(() => {
+    alert(router.query.counter);
+  }, [router.query.counter]);
   return (
     <Layout>
       <Head>
